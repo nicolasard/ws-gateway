@@ -7,7 +7,6 @@ import org.springframework.web.servlet.HandlerInterceptor;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.BufferedReader;
-import java.io.BufferedWriter;
 import java.util.Enumeration;
 
 /*
@@ -31,6 +30,7 @@ public class WebInterceptor implements HandlerInterceptor {
             String paramValue = request.getHeader(param);
             logger.info("Header: {}:{}",param,paramValue);
         }
+        /*
         String line = null;
         try {
             BufferedReader reader = request.getReader();
@@ -40,6 +40,7 @@ public class WebInterceptor implements HandlerInterceptor {
             throw e;
         }
         logger.info(line);
+        */
         logger.info("Response Status: {}",response.getStatus());
         return true;
     }
